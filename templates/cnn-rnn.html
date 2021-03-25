@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% load static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Candidate</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/shop-item.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Problem 2</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+<!--
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+-->
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+        <h1 class="my-4">Different approches</h1>
+        <div class="list-group">
+	 <a href="{% url 'index' %}" class="list-group-item">Preprocessing</a>
+          <a href="{% url 'cnn' %}" class="list-group-item">Convolution Neural net</a>
+          <a href="{% url 'rnn' %}" class="list-group-item">Recurrent neural net</a>
+          <a href="{% url 'crnn' %}" class="list-group-item active">Convolution-recurrent net</a>
+          <a href="{% url 'work' %}" class="list-group-item">Further Work</a>
+        </div>
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div class="card mt-4">
+          <img class="card-img-top img-fluid" src="{% static 'crnn.jpg' %}" alt="">
+          
+        </div>
+        <!-- /.card -->
+
+        <div class="card card-outline-secondary my-4">
+          <div class="card-header">
+            Proposition
+          </div>
+          <div class="card-body">
+            <p>
+              As we see earlier, sequence classification is a predictive modeling problem where you have some sequence of inputs over space or time and the task is to predict a category for the sequence.<br>
+What makes this problem difficult is that the sequences can vary in length, be comprised of a very large vocabulary of input symbols and may require the model to learn the long-term context or dependencies between symbols in the input sequence.
+            </p>
+            <ul><li>
+              RNN: <br>
+              Sequence to sequence learning has been successful in many tasks such as machine translation, speech recognition etc. The dominant approach to date encodes the input sequence with a series of bi-directional recurrent neural networks (RNN)
+            </li>
+            <li>
+              CNN: <br>
+              Recurrent neural networks can obtain context information but the order
+of words will lead to bias; the text analysis method based on Convolutional neural network (CNN) can obtain important features of text through pooling but it is difficult to obtain contextual information. <br>
+            </li>
+              <li> <underline>Hybrid-architecture: CNN + RNN </underline><br>
+                Convolutional neural networks excel at learning the spatial structure in input data. As text data does have a one-dimensional spatial structure in the sequence of words in reviews and the CNN may be able to pick out invariant features for good and bad sentiment. This learned spatial features may then be learned as sequences by a RNN layer.
+We can easily add a one-dimensional CNN and max pooling layers after the Embedding layer which then feed the consolidated features to the RNN. We can use a smallish set of features.
+              </li>
+            </ul>
+            <hr>
+            <p><img src="{% static 'lsrn.jpg' %}" class="col-lg-12 ol-xs-12 col-md-12 col-sm-12"> </p><br>
+            Finally we have improve the two previous models.
+          </div>
+        </div>
+        <!-- /.card -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white"></p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

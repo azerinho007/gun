@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% load static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Candidate</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/shop-item.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Problem 2</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+<!--
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+-->
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+        <h1 class="my-4">Different approches</h1>
+        <div class="list-group">
+	 <a href="{% url 'index' %}" class="list-group-item active">Preprocessing</a>
+          <a href="{% url 'cnn' %}" class="list-group-item">Convolution Neural net</a>
+          <a href="{% url 'rnn' %}" class="list-group-item">Recurrent neural net</a>
+          <a href="{% url 'crnn' %}" class="list-group-item">Convolution-recurrent net</a>
+          <a href="{% url 'work' %}" class="list-group-item">Further Work</a>
+        </div>
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+        {% load static %}
+        <div class="card mt-4">
+          <img class="card-img-top img-fluid" src="{% static 'prep.jpg' %}" alt="">
+          <div class="card-body">
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <div class="card card-outline-secondary my-4">
+          <div class="card-header">
+
+          </div>
+          <div class="card-body">
+            <h5 color=green">1.Data Collection</h5>
+            <p>This is the hardest phase, as we know data are expensive to collect, specially in the case where the domain studied is specific.
+            <br>
+            Generally it will be collected from different sources, in different forms, thus it must be adjusted.</p>
+            <hr>
+            <h5 color=green">2.Data Pre-processing</h5>
+            <p>Usually, the data scientist stay most of time analysing and warming the corpus.
+            <br>
+              This is a crucial phase, the fact we must put our data in smooth way which can be processed by our model.
+              <ul>
+            <li>Extract only needed words, without names, numbers ... </li>
+            <li>Tockenization:
+            <br>
+            Word Tokenization is the most commonly used tokenization algorithm. It splits a piece of text into individual words based on a certain delimiter.
+            <br>
+            Mind! as the phrases has different sizes, we usually consider the biggest dimension as the generic size of all samples, thus for those with small dimension add zeros in the beginning or in the end..</li>
+            <li>
+              OneHot Encoding: <br>
+              Each Sample until know in the form of sequence with L numbers that represents words. to represent a word as a vector is by creating a so-called one-hot encoding, which is simply done by taking a vector of the length of the vocabulary with an entry for each word in the corpus.
+              <br>
+              n this way, you have for each word, given it has a spot in the vocabulary, a vector with zeros everywhere except for the corresponding spot for the word which is set to one. As you might imagine, this can become a fairly large vector for each word and it does not give any additional information like the relationship between words.
+            </li>
+            <li>Word-Embedding:
+            This method represents words as dense word vectors (also called word embeddings) which are trained unlike the one-hot encoding which are hardcoded. This means that the word embeddings collect more information into fewer dimensions.
+
+Note that the word embeddings do not understand the text as a human would, but they rather map the statistical structure of the language used in the corpus. Their aim is to map semantic meaning into a geometric space. This geometric space is then called the embedding space.
+              <br> ==> this phase will be processed as a primary layer in our model.
+            </li>
+            <li>
+              Splitting Dataset: <br>
+              Is the most famous phase in Machine Learning, thus, we split our Dataset in two disjoint groups, the first one is the training set processed to adjust and optimise model's params, the other one is the test set, is used to test
+              the model as a desire of generalisation.
+              <br>
+              Mind! To resist the data-leakage, and in tye of Deep learning problems, his phase will be the first phase in the preprocessing stage.
+            </li>
+          </ul>
+            </p>
+            <hr>
+            <hr>
+            <p><img src="{% static 'load.jpg' %}"> </p>
+            <p><img src="{% static 'token.jpg' %}"> </p>
+            <p><img src="{% static 'split.jpg' %}"> </p>
+            <hr>
+          </div>
+        </div>
+        <!-- /.card -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white"></p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

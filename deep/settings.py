@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'u^jnc!(!+6s_0-7=+c4%5g#d+3*ua*6_um2o!e#bdbdpsoq4ew'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["127.0.0.1","geek-candidate.herokuapp.com/","localhost"]
 
@@ -48,7 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'django.middleware.WhiteNoiseMiddleware',
+    'django.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'deep.urls'
